@@ -1,0 +1,12 @@
+# This directory contains Docker configuration data
+# It will be created automatically when running the container
+
+# Subdirectories:
+# - .config/     - Application configuration
+# - .local/      - Local application data
+# - .cache/      - Application cache
+# - certs/       - SSL/TLS certificates (optional)
+
+# Do not commit the contents of this directory
+*
+!.gitignore

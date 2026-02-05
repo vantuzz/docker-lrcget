@@ -1,0 +1,61 @@
+
+services:
+  lrcget:
+    image: lrcget:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lrcget
+    restart: unless-stopped
+    
+    # Port mappings
+    ports:
+      - "5801:5800"  # Web interface (HTTP)
+      - "5901:5900"  # VNC (optional)
+    
+    # Environment variables
+    environment:
+      # User/Group IDs - adjust to match your host user
+      - USER_ID=1000
+      - GROUP_ID=1000
+      
+      # Display settings
+      - DISPLAY_WIDTH=1280
+      - DISPLAY_HEIGHT=768
+      
+      # Keep application running
+      - KEEP_APP_RUNNING=1
+      
+      # Timezone
+      - TZ=America/New_York
+      
+      # Optional: VNC password (max 8 characters)
+      # - VNC_PASSWORD=password
+      
+      # Optional: Enable secure connection (HTTPS/SSL)
+      # - SECURE_CONNECTION=1
+      
+      # Optional: Enable CJK fonts if needed
+      # - ENABLE_CJK_FONT=1
+    
+    # Volume mappings
+    volumes:
+      # Configuration data
+      - ./docker/config:/config:rw
+      
+      # Music library - mount your music folder here
+      - /path/to/your/music:/music:rw
+      
+      # Optional: Timezone
+      # - /etc/localtime:/etc/localtime:ro
+    
+    # Optional: devices for audio (Linux only - comment out on Windows/Mac)
+    # devices:
+    #   - /dev/snd:/dev/snd  # Audio device passthrough
+    
+    # Optional: Add capabilities for better audio support
+    # cap_add:
+    #   - SYS_NICE  # For APP_NICENESS if needed
+    
+    # Shared memory size (for browser/GUI)
+    shm_size: '2gb'

@@ -1,0 +1,10 @@
+# We're using prebuilt releases, so ignore source files
+*
+
+# Only include Docker-specific files
+!docker/
+!Dockerfile
+!docker-compose.yml
+
+# But exclude config directory
+docker/config/
