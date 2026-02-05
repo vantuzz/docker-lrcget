@@ -35,9 +35,12 @@ services:
       # Optional: VNC password (max 8 characters)
       # - VNC_PASSWORD=password
       
-      # Optional: Enable secure connection (HTTPS/SSL)
+      # Optional: Enable secure connection (HTTPS/SSL) and web authentication
       # - SECURE_CONNECTION=1
-      
+      # - WEB_AUTHENTICATION=1 #SECURE CONNECTION MUST BE ENABLED
+      # - WEB_AUTHENTICATION_USERNAME=yourusername
+      # - WEB_AUTHENTICATION_PASSWORD=yourpassword
+
       # Optional: Enable CJK fonts if needed
       # - ENABLE_CJK_FONT=1
     
