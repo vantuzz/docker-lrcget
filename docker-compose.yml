@@ -1,11 +1,11 @@
 
 services:
-  lrcget:
-    image: lrcget:latest
+  docker-lrcget:
+    image: gtt1229/docker-lrcget:latest
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lrcget
+    container_name: docker-lrcget
     restart: unless-stopped
     
     # Port mappings
@@ -25,6 +25,9 @@ services:
       
       # Keep application running
       - KEEP_APP_RUNNING=1
+      
+      # Enable web audio streaming
+      - WEB_AUDIO=1
       
       # Timezone
       - TZ=America/New_York
