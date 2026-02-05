@@ -14,7 +14,7 @@ LRCGET is a utility for mass-downloading LRC synced lyrics for your offline musi
 
 ---
 
-This container is based on the absolutely fantastic [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui). All the hard work has been done by them, and I shamelessly copied [mikenye/picard](https://github.com/mikenye/docker-picard)'s README who copied their README.md. I've cut the README.md down quite a bit, for advanced usage I suggest you check out the [README](https://github.com/jlesage/docker-handbrake/blob/master/README.md) from [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui).
+This container is based on the absolutely fantastic [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui) and based on [mikenye/picard](https://github.com/mikenye/docker-picard)'s Docker container implementation of MusicBrainz Picard. All the hard work has been done by them, and I shamelessly copied [mikenye/picard](https://github.com/mikenye/docker-picard)'s README who copied their README.md. I've cut the README.md down quite a bit, for advanced usage I suggest you check out the [README](https://github.com/jlesage/docker-handbrake/blob/master/README.md) from [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui).
 
 ---
 
