@@ -18,6 +18,12 @@ This container is based on the absolutely fantastic [jlesage/baseimage-gui](http
 
 ---
 
+# ⚠️ NOTE ABOUT AUDIO ⚠️
+
+The container supports audio via the web UI; however, audio is not for listening purposes as the quality is heavily degraded. **It should be used only to confirm lyrics are matching and syncing**.
+
+---
+
 ## Table of Contents
 
    * [Quick Start](#quick-start)
