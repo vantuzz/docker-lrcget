@@ -49,6 +49,9 @@ RUN set -x && \
     cd /usr/local/bin && \
     ./lrcget.AppImage --appimage-extract && \
     mv squashfs-root /opt/lrcget && \
+    chmod 755 /opt/lrcget/AppRun.wrapped && \
+    echo '#!/bin/bash\nexec /opt/lrcget/AppRun "$@"' > /usr/local/bin/lrcget && \
+    chmod +x /usr/local/bin/lrcget && \
     rm lrcget.AppImage && \
     # Create wrapper script
     echo '#!/bin/bash\nexec /opt/lrcget/AppRun "$@"' > /usr/local/bin/lrcget && \
