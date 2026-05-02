@@ -1,7 +1,7 @@
 
 services:
   docker-lrcget:
-    image: gtt1229/docker-lrcget:latest
+    image: vantuzz/docker-lrcget:latest
     build:
       context: .
       dockerfile: Dockerfile
