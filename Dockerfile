@@ -1,7 +1,7 @@
 FROM docker.io/jlesage/baseimage-gui:ubuntu-24.04-v4.10.7
 
 # Set LRCGET version
-ARG LRCGET_VERSION=2.2.0
+ARG LRCGET_VERSION=2.2.2
 
 # Set environment variables
 ENV APP_NAME="LRCGET" \
@@ -42,7 +42,7 @@ RUN set -x && \
     # Download LRCGET AppImage
     echo "Downloading LRCGET v${LRCGET_VERSION}..." && \
     wget -q --show-progress \
-        "https://github.com/tranxuanthang/lrcget/releases/download/${LRCGET_VERSION}/LRCGET_${LRCGET_VERSION}_amd64.AppImage" \
+        "https://github.com/tranxuanthang/lrcget/releases/download/${LRCGET_VERSION}/lrcget_${LRCGET_VERSION}_amd64.AppImage" \
         -O /usr/local/bin/lrcget.AppImage && \
     chmod +x /usr/local/bin/lrcget.AppImage && \
     # Extract AppImage (AppImages don't work well in Docker without --appimage-extract-and-run)
