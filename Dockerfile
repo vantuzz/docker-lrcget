@@ -49,13 +49,12 @@ RUN set -x && \
     cd /usr/local/bin && \
     ./lrcget.AppImage --appimage-extract && \
     mv squashfs-root /opt/lrcget && \
-    chmod 755 /opt/lrcget/AppRun.wrapped && \
-    echo '#!/bin/bash\nexec /opt/lrcget/AppRun "$@"' > /usr/local/bin/lrcget && \
-    chmod +x /usr/local/bin/lrcget && \
+    # Extracted AppImage dirs are 0700 root-only; the app runs as a non-root user
+    chmod -R a+rX /opt/lrcget && \
     rm lrcget.AppImage && \
     # Create wrapper script
-    echo '#!/bin/bash\nexec /opt/lrcget/AppRun "$@"' > /usr/local/bin/lrcget && \
-    chmod +x /usr/local/bin/lrcget && \
+    printf '#!/bin/bash\nexec /opt/lrcget/AppRun "$@"\n' > /usr/local/bin/lrcget && \
+    chmod 755 /usr/local/bin/lrcget && \
     # Clean up
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
